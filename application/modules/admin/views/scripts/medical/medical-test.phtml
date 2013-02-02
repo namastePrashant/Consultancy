@@ -1,0 +1,9 @@
+<p>Is this Candidate is Medical Pass?</p>
+<form action="<?php echo $this->baseUrl() . '/admin/medical/medical-test/id/' . $this->id; ?>" method="post">
+    <div>
+        <input type="hidden" name="id" value="<?php echo $this->message['id']; ?>" />
+        <input type="submit" name="medical" value="Yes" />
+        <input type="submit" name="medical" value="No" />
+    </div>
+</form>
+

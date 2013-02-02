@@ -1,0 +1,53 @@
+body { }
+
+.clear {clear:both;}
+
+div.form-text{
+    padding: 10px 10px 10px 10px;
+    margin: 2px 2px 2px 2px;
+    float: left;
+}
+
+#agent_span{
+    float:right;
+    margin-right: 4%;
+}
+
+.print-data{
+    /*float:right;*/
+    /*margin-right: 180px;*/
+/*    height: 3508px;
+    width: 2480px;*/
+}
+#img-wrapper{
+    float:right;
+    /*margin-right: 10px;*/
+    
+}
+#name-profession{
+    padding-top: 50px;
+}
+
+#date{
+    float: left;
+}
+
+#row2{
+    height:60px;
+}
+
+#legend-center{
+    float: left;
+    margin-left: 10%;
+}
+.form-color{
+    color:rgb(234, 118, 12);
+}
+
+/************************ Candidate, Staff Form Details********************************/
+#marital_status,#sex,#religion,#address,#agent_id, #company_name,#candidate_id,#add_company_id,#visa_group,#ccat_id,#image_name{
+    width:205px;
+}
+#name,#guardain_name,#dob,#passport_no,#bearer_name,#passport_issued_date,#passport_expiry_date,#educational_background,#profession,#salary,#duty_hour,#email,#post,#phone,#address,#phone1,#passport,#mofa_no,#gamca_no,#medical_center,#id_number,#visa_no,#visa_number,#date{
+    height:26px;
+}

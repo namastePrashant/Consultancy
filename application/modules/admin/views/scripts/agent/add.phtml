@@ -1,0 +1,57 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php $form = $this->form->getElements(); ?>
+        <?php
+        echo $this->headLink()
+                ->prependStylesheet($this->baseUrl() . '/destiny/admin/css/form.css')
+                ->prependStylesheet($this->baseUrl() . '/destiny/admin/css/style.css')
+        ?>
+        <!-- Scripts -->
+        <?php
+        echo $this->headScript()->appendFile($this->baseUrl() . '/common/js/jquery-1.7.2.min.js');
+        ?>
+    </head>
+
+    <div class="form-wrap hero-unit form-color">
+        <form action="" method="post">
+            <fieldset class="hero-unit">
+                <legend><h3>Add Agent</h3></legend>
+                <div id="agent_span">
+                    <div class="span4"><?php echo $form["agent_id"]; ?></div>
+                </div>
+                <div class="span12" id="row2">
+                    <div class="span2"><label>Full Name</label></div>
+                    <div class="span5"><?php echo $form["name"]; ?></div>
+                </div>
+                <div class="clear"></div>
+
+                <div class="span12" id="row2">
+                    <div class="span2"><label>Gender</label></div>
+                    <div class="span5"><?php echo $form["sex"]; ?></div>
+                </div>
+                <div class="clear"></div>
+                <div class="span12" id="row2">
+                    <div class="span2"><label>Phone</label></div>
+                    <div class="span5"><?php echo $form["phone"]; ?></div>
+                </div>
+                <div class="clear"></div>
+                <div class="span12" id="row2">
+                    <div class="span2"><label>Additional Phone</label></div>
+                    <div class="span5"><?php echo $form["phone1"]; ?></div>
+                </div>
+                <div class="clear"></div>
+                <div class="span12" id="row2">
+                    <div class="span2"><label>Email</label></div>
+                    <div class="span5"><?php echo $form["email"]; ?></div>
+                </div>
+                <div class="clear"></div>
+                <div class="span12" id="row2">
+                    <div class="span2"><label>Address</label></div>
+                    <div class="span5"><?php echo $form["address"]; ?></div>
+                </div>
+                <div class="clear"></div>
+                <div><?php echo $form['submit']; ?></div>
+            </fieldset>
+        </form>
+    </div>

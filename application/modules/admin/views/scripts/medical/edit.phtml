@@ -1,0 +1,94 @@
+<?php $form = $this->form->getElements(); ?>
+<?php
+echo $this->headLink()
+        ->prependStylesheet($this->baseUrl() . '/destiny/admin/css/form.css')
+        ->prependStylesheet($this->baseUrl() . '/destiny/admin/css/style.css')
+?>
+<!-- Scripts -->
+<script type="text/javascript" src="<?php echo $this->baseUrl() . '/common/js/jquery-ui-1.8.21.custom.min.js'; ?>"></script> 
+<script type="text/javascript" src="<?php echo $this->baseUrl() . '/common/js/jquery-1.7.2.min.js'; ?>"></script> 
+
+<form action="" method="post">
+    <fieldset>
+        <legend><h2>Edit Medical Report </h2></legend>
+        <fieldset class="span11">
+            <div>
+                <div class="span4"><?php echo $form["medical_id"]; ?></div>
+            </div>
+            <div class="span12" id="row2">
+                <div class="span2"><label>Candidate Name</label></div>
+                <div class="span5"><?php echo $form["candidate_id"]; ?></div>
+            </div>
+            <div class="clear"></div>
+
+            <div class="span12" id="row2">
+                <div class="span2"><label>Passport No.</label></div>
+                <div class="span5"><?php echo $form["passport_no"]; ?></div>
+            </div>
+            <div class="clear"></div>
+            <div class="span12" id="row2">
+                <div class="span2"><label>Mofa No.</label></div>
+                <div class="span5"><?php echo $form["mofa_no"]; ?></div>
+            </div>
+            <div class="clear"></div>
+            <div class="span12" id="row2">
+                <div class="span2"><label>Gamca No.</label></div>
+                <div class="span5"><?php echo $form["gamca_no"]; ?></div>
+            </div>
+            <div class="clear"></div>
+            <div class="span12" id="row2">
+                <div class="span2"><label>Medical Center</label></div>
+                <div class="span5"><?php echo $form["medical_center"]; ?></div>
+            </div>
+            <div class="clear"></div>
+            <div class="span12" id="row2">
+                <div class="span2"><label>Company Name</label></div>
+                <div class="span5"><?php echo $form["add_company_id"]; ?></div>
+            </div>
+            <div class="clear"></div>
+            <div class="span12" id="row2">
+                <div class="span2"><label>ID Number</label></div>
+                <div class="span5"><?php echo $form["id_number"]; ?></div>
+            </div>
+            <div class="clear"></div>
+            <div class="span12" id="row2">
+                <div class="span2"><label>Visa Group</label></div>
+                <div class="span5"><?php echo $form["visa_group"]; ?></div>
+            </div>
+            <div class="clear"></div>
+
+            <div class="span12" id="row2">
+                <div class="span2"><label> Select Profession</label></div>
+                <div class="span5"><?php echo $form["ccat_id"]; ?></div>
+            </div>
+            <div class="clear"></div>
+            <div class="span12" id="row2">
+                <div class="span2"><label>Visa No.</label></div>
+                <div class="span5"><?php echo $form["visa_no"]; ?></div>
+            </div>
+            <div class="clear"></div>
+            <div><?php echo $form['submit']; ?></div>
+        </fieldset>
+</form>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#candidate_id").live("change", function() {
+            var $that = $(this);
+            var amount = $.trim($(this).val());
+            console.log(amount);
+            var passportno = amount.split("::");
+            console.log(passportno[2]);
+            $("#passport").val(passportno[2]);
+        });
+        $("#add_company_id").live("change", function() {
+            var $that = $(this);
+            var amount = $.trim($(this).val());
+            console.log(amount);
+            var passportno = amount.split("::");
+            console.log(passportno[1]);
+            $("#id_number").val(passportno[1]);
+        });
+    });
+</script>

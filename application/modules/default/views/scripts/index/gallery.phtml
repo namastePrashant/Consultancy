@@ -1,0 +1,30 @@
+<!--CSS-->
+<?php
+echo $this->headLink()
+        ->appendStylesheet($this->baseUrl() . '/destiny/front/css/prettyPhoto.css')
+?>
+<!--Scripts-->
+<?php
+echo $this->headScript()
+        ->appendFile($this->baseUrl() . "/common/js/jquery-prettyPhoto.js")
+?>
+<div class="thumbnails">
+    <div class="span12 hero-unit">
+        <a href="../destiny/front/gallery/paru.jpg" rel="prettyPhoto[gallery]" title="Manager Director Mrs. Paru Rai"><div class="span3 row"><img src="../destiny/front/gallery/paru.jpg" alt="" /></div></a>
+        <a href="../destiny/front/gallery/pooja.jpg" rel="prettyPhoto[gallery]" title="Administrative Director Mrs. Pooja Thapa"><div class="span3 row"><img src="../destiny/front/gallery/pooja.jpg" alt="" /></div></a>
+        <a href="../destiny/front/gallery/suman.jpg" rel="prettyPhoto[gallery]" title="Overseas Director Mr. Suman Shrestha"><div class="span3 row"><img src="../destiny/front/gallery/suman.jpg" alt="" /></div></a>
+        <a href="../destiny/front/gallery/prakash.jpg" rel="prettyPhoto[gallery]" title="Executive Director Mr. Prakash Mahasett"><div class="span3 row"><img src="../destiny/front/gallery/prakash.jpg" alt="" /></div></a>
+        <a href="../destiny/front/gallery/shyam.jpg" rel="prettyPhoto[gallery]" title="Foreign Affairs Manager"><div class="span3 row"><img src="../destiny/front/gallery/shyam.jpg" alt="" /></div></a>
+        <a href="../destiny/front/gallery/team.jpg" rel="prettyPhoto[gallery]" title="Team"><div class="span3 row"><img src="../destiny/front/gallery/team.jpg" alt="" /></div></a>
+        <a href="../destiny/front/gallery/paru.jpg" rel="prettyPhoto[gallery]" title="Manager Director Mrs. Paru Rai"><div class="span3 row"><img src="../destiny/front/gallery/paru.jpg" alt="" /></div></a>
+        <a href="../destiny/front/gallery/pooja.jpg" rel="prettyPhoto[gallery]" title="Administrative Director Mrs. Pooja Thapa"><div class="span3 row"><img src="../destiny/front/gallery/pooja.jpg" alt="" /></div></a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("a[rel^='prettyPhoto']").prettyPhoto({
+            theme: 'dark_rounded'
+        });
+    });
+</script>

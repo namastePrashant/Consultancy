@@ -1,0 +1,162 @@
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title> Destiny Placement Services </title>
+        <!--            Script-->
+        <?php
+        echo $this->headScript()
+                ->appendFile($this->baseUrl() . "/common/js/jconfirmaction.jquery.js")
+                ->appendFile($this->baseUrl() . "/common/js/ddaccordion.js")
+                ->appendFile($this->baseUrl() . '/common/js/jquery-1.8.3.js')
+                ->appendFile($this->baseUrl() . '/common/js/ui/jquery-ui-1.9.2.custom.js')
+                ->appendFile($this->baseUrl() . '/common/js/jquery-ui-1.9.2.custom.min.js');
+        ?>
+        <!--        CSS-->
+        <?php
+        echo $this->headLink()
+                ->appendStylesheet($this->baseUrl() . '/destiny/admin/css/bootstrap-custom.css')
+                ->appendStylesheet($this->baseUrl() . '/destiny/admin/css/style.css')
+                ->appendStylesheet($this->baseUrl() . '/destiny/admin/css/bootstrap-responsive.min.css')
+                ->prependStylesheet($this->baseUrl() . '/common/css/smoothness/jquery-ui-1.9.2.custom.css')
+                ->prependStylesheet($this->baseUrl() . '/common/css/smoothness/jquery-ui-1.9.2.custom.min.css')
+        ?>
+        <script type="text/javascript">
+            site = {
+                'baseUrl': "<?php echo $this->baseUrl(); ?>"
+            };
+        </script>
+    </head>
+    <body>
+
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand"><img src="<?php echo $this->baseUrl() . '/destiny/admin/image/logontext_r.png'; ?>"><div class="slogon">Pioneer in Foreign Employment Placement</div></a>
+                    <div class="nav-collapse">
+                        <ul class="nav nav-pills">
+                            <li><a href="<?php echo $this->baseUrl() . '/admin'; ?>">Dashboard</a></li>
+                            <li><a href="<?php echo $this->baseUrl() . '/admin/staff/list'; ?>">Staff</a></li>
+                            <li><a href="<?php echo $this->baseUrl() . '/admin/agent/list'; ?>">Agent</a></li>
+                            <li><a href="<?php echo $this->baseUrl() . '/admin/candidate/list'; ?>">Candidates</a></li>
+                            <li><a href="<?php echo $this->baseUrl() . '/admin/medical/list'; ?>">Medical</a></li>
+                            <li><a href="<?php echo $this->baseUrl() . '/admin/stamping/list'; ?>">Stamping</a></li>
+                            <li><a href="<?php echo $this->baseUrl() . '/admin/category'; ?>">Category</a></li>
+                            <li><a href="<?php echo $this->baseUrl() . '/admin/company'; ?>">Company</a></li>
+                            <?php if (Zend_Auth::getInstance()->hasIdentity()) { ?>
+                                <li><a href="<?php echo $this->baseUrl() . '/admin/login/logout'; ?>">Logout</a></li>
+                            <?php } ?>
+                        </ul>
+                    </div><!--                    nav-collapse div Ends-->
+                </div><!--                container div Ends-->
+            </div><!--            navbar-inner div Ends-->
+        </div><!--        navbar navbar-fixed-top-->
+        <div class="container">
+            <div class="span3" id="flash-messages">
+                <?php
+                $flashMessenger = $this->flashMessages();
+                print $flashMessenger->getMessages();
+                ?>
+            </div><div class="clear"></div>
+        </div><!--         container div Ends-->
+        <div class="container">  
+            <div class="span12 row-fluid">  
+                <div class="span2">  
+                    <div class="sidebarmenu">
+                        <a class="menuitem submenuheader" href="">Candidates</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="<?php echo $this->baseUrl() . '/admin/candidate/add'; ?>">New Candidates</a></li>
+                                <li><a href="<?php echo $this->baseUrl() . '/admin/candidate/list'; ?>">List of Candidates</a></li>
+                                <li><a href="">Sidebar submenu</a></li>
+                                <li><a href="">Sidebar submenu</a></li>
+                                <li><a href="">Sidebar submenu</a></li>
+                            </ul>
+                        </div>
+                        <a class="menuitem submenuheader" href="" >Medical</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="">Sidebar submenu</a></li>
+                                <li><a href="">Sidebar submenu</a></li>
+                                <li><a href="">Sidebar submenu</a></li>
+                                <li><a href="">Sidebar submenu</a></li>
+                                <li><a href="">Sidebar submenu</a></li>
+                            </ul>
+                        </div>
+                        <a class="menuitem submenuheader" href="">Sharam</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="">Sidebar submenu</a></li>
+                                <li><a href="">Sidebar submenu</a></li>
+                                <li><a href="">Sidebar submenu</a></li>
+                                <li><a href="">Sidebar submenu</a></li>
+                                <li><a href="">Sidebar submenu</a></li>
+                            </ul>
+                        </div>
+                        <a class="menuitem" href="">Stamping Status</a>
+                        <a class="menuitem" href="">Medical Status</a>
+
+                        <a class="menuitem" href="">Interview Document to Print</a>
+
+                        <a class="menuitem" href="">Final Document to Print</a>
+
+                    </div>
+                </div><!--/.span3 --> 
+                <div class="span10">
+                    <?php echo $this->layout()->content; ?>
+                </div><div class='clear'></div>
+            </div><!--/span12 hero-unit-->  
+            <div class="span3" id="flash-messages">
+                <?php
+                $flashMessenger = $this->flashMessages();
+                print $flashMessenger->getMessages();
+                ?>
+            </div><div class="clear"></div>
+        </div><!--/row-fluid-->
+        <!--    </div>        /container-fluid-->
+        <div class="clear"></div>
+        <footer>
+            <div class="nav">
+                <div class="navbar-inverse">
+                    <div class="navbar-inner">
+                        Copyright (c) Fourfox Inc. 2012         
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript">
+            ddaccordion.init({
+                headerclass: "submenuheader", //Shared CSS class name of headers group
+                contentclass: "submenu", //Shared CSS class name of contents group
+                revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+                mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+                collapseprev: true, //Collapse previous content (so only one open at any time)? true/false 
+                defaultexpanded: [], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+                onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+                animatedefault: false, //Should contents open by default be animated into view?
+                persiststate: true, //persist state of opened contents within browser session?
+                toggleclass: ["", ""], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+                togglehtml: ["suffix", ], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+                animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+                oninit: function(headers, expandedindices) { //custom code to run when headers have initalized
+                    //do nothing
+                },
+                onopenclose: function(header, index, state, isuseractivated) { //custom code to run whenever a header is opened or closed
+                    //do nothing
+                }
+            })
+        </script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl() . '/common/js/jconfirmaction.jquery.js'; ?>"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.ask').jConfirmAction();
+            });
+        </script>
+    </body>
+
+</html>
+

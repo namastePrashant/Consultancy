@@ -1,0 +1,71 @@
+<link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:400,700' rel='stylesheet' type='text/css'>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
+
+<div class="span11 hero-unit">
+    <div class="span6 hero-unit">
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                <img src="<?php echo $this->baseUrl() . '/destiny/front/gallery/paru.jpg'; ?>" data-thumb="<?php echo $this->baseUrl() . '/destiny/front/gallery/paru.jpg'; ?>" alt="" title="We provide you best service in the industry." />
+                <img src="<?php echo $this->baseUrl() . '/destiny/front/gallery/pooja.jpg'; ?>" data-thumb="<?php echo $this->baseUrl() . '/destiny/front/gallery/pooja.jpg'; ?>" alt="" title="Destiny is perfect platform to choose your destination." />
+                <img src="<?php echo $this->baseUrl() . '/destiny/front/gallery/suman.jpg'; ?>" data-thumb="<?php echo $this->baseUrl() . '/destiny/front/gallery/suman.jpg'; ?>" alt="" title="We fit right people in right job." data-transition="slideInLeft" />
+                <img src="<?php echo $this->baseUrl() . '/destiny/front/gallery/prakash.jpg'; ?>" data-thumb="<?php echo $this->baseUrl() . '/destiny/front/gallery/prakash.jpg'; ?>" alt="" title="We fit right people in right job." />
+                <img src="<?php echo $this->baseUrl() . '/destiny/front/gallery/shyam.jpg'; ?>" data-thumb="<?php echo $this->baseUrl() . '/destiny/front/gallery/shyam.jpg'; ?>" alt=""  title="We fit right people in right job." />
+                <img src="<?php echo $this->baseUrl() . '/destiny/front/gallery/team.jpg'; ?>" data-thumb="<?php echo $this->baseUrl() . '/destiny/front/gallery/team.jpg'; ?>" alt="" data-transition="slideInRight" title="We fit right people in right job." />
+            </div>
+        </div>
+    </div>
+    <div class="span2 hero-unit">
+        <p>Join Us!!</p>
+        <p>We guide in your every step to search the best jobs that suits with your qualification, experience & knowledge. </p>
+    </div>
+</div><!--            span11 hero-unit div ends-->
+<div class="container">
+    <div class="span11 hero-unit">
+        <div class="span4">
+            <div class="left-para">
+                <p><h3>Contact US</h3></p>
+                <p><h5>Destiny Placement Service (P.) LTD.</h5><p>
+                <p><h5>Address: Baneshwor Height</h5><p>
+                <p><h5>Telephone No.: 977-1-4497404, 4475176, 4464515</h5><p>
+                <p><h5>Fax:	977-1-4492962</h5><p>
+                <p><h5>Email: info@destinyplacement.com</h5><p>
+            </div>
+        </div>
+        <div class="span6">
+            <div id="map">
+                <script>
+                    var latitude = 27.699578
+                    var longitude = 85.335303
+                    var myCenter = new google.maps.LatLng(latitude, longitude);
+                    var marker;
+
+                    function initialize()
+                    {
+                        var mapProp = {
+                            center: myCenter,
+                            zoom: 15,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+
+                        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+                        marker = new google.maps.Marker({
+                            position: myCenter,
+                            animation: google.maps.Animation.BOUNCE
+                        });
+
+                        marker.setMap(map);
+                    }
+
+                    google.maps.event.addDomListener(window, 'load', initialize);
+                </script>
+                <div id="googleMap" style="width:650px;height:400px;"></div>
+            </div>
+        </div><!--        span6 div ends-->
+    </div><!--    span11 hero-unit div ends-->
+</div><!--Container div ends-->
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+</script>

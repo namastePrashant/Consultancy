@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> DPS </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="<?php echo $this->baseUrl() . '/destiny/front/css/bootstrap-custom.css'; ?>" rel="stylesheet" media="screen,projection">
+        <link href="<?php echo $this->baseUrl() . '/destiny/front/css/themes/default/default.css'; ?>" rel="stylesheet" media="screen">
+        <link href="<?php echo $this->baseUrl() . '/destiny/front/css/themes/dark/dark.css'; ?>" rel="stylesheet" media="screen">
+        <link href="<?php echo $this->baseUrl() . '/destiny/front/css/themes/bar/bar.css'; ?>" rel="stylesheet" media="screen">
+        <link href="<?php echo $this->baseUrl() . '/destiny/front/css/themes/light/light.css'; ?>" rel="stylesheet" media="screen">
+        <link href="<?php echo $this->baseUrl() . '/destiny/front/css/nivo-slider.css'; ?>" rel="stylesheet" media="screen">
+        <link href="<?php echo $this->baseUrl() . '/destiny/front/css/style.css'; ?>" rel="stylesheet">
+        <style type="text/css">
+            body {
+                padding-top: 80px;
+                padding-bottom: 40px;
+            }
+            hgroup h1, hgroup h2, hgroup h3 {
+                line-height: 1.1;
+            }
+            hgroup h1 small {
+                margin-top: 6px;
+                line-height: 1.5;
+                display: block;
+            }
+        </style>
+        <link href="<?php echo $this->baseUrl() . '/destiny/front/css/bootstrap-responsive.min.css'; ?>" rel="stylesheet">
+
+        <!-- Featured Slider Elements -->
+        <script type="text/javascript" src="<?php echo $this->baseUrl() . '/destiny/front/js/jquery-1.7.2.min.js'; ?>"></script>
+        <script src="<?php echo $this->baseUrl() . '/destiny/front/js/bootstrap.js'; ?>"></script>
+        <script src="<?php echo $this->baseUrl() . '/destiny/front/js/jquery.nivo.slider.pack.js'; ?>"></script>
+        <!-- End Featured Slider Elements -->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand">
+                        <div float="left">
+                            <span class="thick-logo"> Destiny </span>
+                            <span class="thin-logo"> Placement Services</span>
+                        </div>
+                    </a>
+                    <div class="nav-collapse">
+                        <?php
+                        $fc = Zend_Controller_Front::getInstance()->getRequest();
+                        $action = $fc->getActionName();
+                        $controller = $fc->getControllerName();
+                        if ($controller == 'index') {
+                            $homeActive = ($action == 'index') ? 'class="active"' : '';
+                            $aboutActive = ($action == 'about') ? 'class="active"' : '';
+                            $serviceActive = ($action == 'service') ? 'class="active"' : '';
+                            $portfolioActive = ($action == 'portfolio') ? 'class="active"' : '';
+                            $teamActive = ($action == 'team') ? 'class="active"' : '';
+                            $contactActive = ($action == 'contact') ? 'class="active"' : '';
+                            $galleryActive = ($action == 'gallery') ? 'class="active"' : '';
+                        }
+                        ?>
+                        <ul class="nav nav-pills">
+                            <li <?php echo $homeActive; ?>><a href="<?php echo $this->baseUrl(); ?>">Home</a></li>
+                            <li <?php echo $aboutActive; ?>><a href="<?php echo $this->baseUrl(); ?>/index/about">About</a></li>
+                            <li <?php echo $serviceActive; ?>><a href="<?php echo $this->baseUrl(); ?>/index/service">Service</a></li>
+                            <li <?php echo $portfolioActive; ?>><a href="<?php echo $this->baseUrl(); ?>/index/whyus">Why Us</a></li>
+                            <li <?php echo $contactActive; ?>><a href="<?php echo $this->baseUrl(); ?>/index/contact">Contact Us</a></li>
+                        </ul>
+                        <!--                        <div class="fb-like" data-href="http://www.destinyplacement.com" data-send="true" data-width="450" data-show-faces="true" data-font="verdana"></div>-->
+                    </div><!--                    nav-collapse div Ends-->
+                </div><!--                container div Ends-->
+            </div><!--            navbar-inner div Ends-->
+        </div><!--        navbar navbar-fixed-top-->
+        <div class="clear"></div>
+        <div class="container">
+            <?php echo $this->layout()->content; ?>
+        </div><!--        container div ends-->
+        <div class="clear"></div>
+        <footer>
+            <div class="nav">
+                <div class="navbar-inverse">
+                    <div class="navbar-inner">
+                        Copyright (c) Fourfox Inc. 2012         
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <!--    <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+    
+        <script src="js/bootstrap.js"></script>-->
+</html>

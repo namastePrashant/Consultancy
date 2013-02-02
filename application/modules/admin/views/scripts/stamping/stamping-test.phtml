@@ -1,0 +1,9 @@
+<p>Is this Candidate is Stamping Pass?</p>
+<form action="<?php echo $this->baseUrl() . '/admin/stamping/stamping-test/id/' . $this->id; ?>" method="post">
+    <div>
+        <input type="hidden" name="id" value="<?php echo $this->message['id']; ?>" />
+        <input type="submit" name="stamping" value="Yes" />
+        <input type="submit" name="stamping" value="No" />
+    </div>
+</form>
+
